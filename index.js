@@ -119,11 +119,13 @@ validForm.addEventListener('submit', (e) => {
     ProgressBar();
     
     const photo = document.getElementById("photo").files[0];
+    const userphoto = photo.value;
     if (photo) {
       const reader = new FileReader();
-
+      
       reader.onload = function () {
       const photoBase64 = reader.result;
+      const userphotoBase64 = reader.result;
 
       // Stockage dans localStorage
       const UserName = nom.value.trim();
@@ -134,6 +136,7 @@ validForm.addEventListener('submit', (e) => {
       localStorage.setItem("prenom", UserLastName);
       localStorage.setItem("email", Useremail);
       localStorage.setItem("photo", photoBase64);
+      localStorage.setItem("userphoto", userphotoBase64);
 
       // Redirection vers la page d'accueil
       setTimeout(() => {
@@ -141,7 +144,7 @@ validForm.addEventListener('submit', (e) => {
       }, 2000); // Attendre la fin de la barre de progression
       };
 
-      reader.readAsDataURL(photo);
+      reader.readAsDataURL(photo, userphoto);
     } else {
       FormulaireStatut.style.color = "red";
       FormulaireStatut.textContent = "Veuillez ajouter une photo.";

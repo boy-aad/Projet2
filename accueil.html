@@ -25,7 +25,7 @@
         </form>
 
         <form class="">
-          <button class="btn btn-outline-dark me-2" type="button">
+          <button class="btn btn-outline-dark me-2" id="add-product" type="button">
             Ajouter un produit
           </button>
           <a href="#">
@@ -34,7 +34,7 @@
               id="logOut"
               type="button"
             >
-              Log out
+              Deconnexion
             </button>
           </a>
         </form>
@@ -42,14 +42,14 @@
     </header>
 
     <!-- WELCOMING USER -->
-    <div class=" home container">
+    <div class=" home container" id="home">
       <div class="item">
         <h2>
-          Binvenue chez 2AD'S Online Store <span class="logo-icon"><i class="bx bxs-cart-add"></i></span> <br />
+          Bienvenue chez 2AD'S Online Store <span class="logo-icon"><i class="bx bxs-cart-add"></i></span> <br />
           <span id = "user-prenom"></span>
           <span id = "user-name"></span>
           
-          <img id="photo" src="./img/AAD.JPG" alt="Photo de profil de AAD" style="width:140px; height:130px; object-fit:center; border-radius: 50%;">
+          <img class="photo" id="photo" src="" alt="Photo de profil de AAD" >
           
         </h2>
 
@@ -66,14 +66,74 @@
           <p>
            Email : <span id = "user-email"></span>
           </p>
-          <img id="photo1" src="./img/AAD.JPG" alt="Photo de profil de AAD" style="width:140px; height:130px; object-fit:center; border-radius: 50%;">
+          <img class="photo" id="userphoto" src="" alt="Photo de profil de AAD">
           
-        </div> -->
+        </div> 
        
       </div>
       
   </div>
     <!-- formulaire de produit form hidden then -->
+     <section id="produit">
+      <h2 class="product-head">Gestion de Produits
+      </h2>
+       <div class="section-produit">
+       
+      
+        <form   id="form-produit">
+          <div class="mb-2">
+            <label for="Nom-produit" class="form-label">Nom du produit</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Nom-produit"
+              required
+            />
+            
+            </div>
+          
+          <div class="mb-2">
+            <label for="Quantity" class="form-label">Quantité en stock </label>
+            <input
+              type="text"
+              class="form-control"
+              id="Quantity"
+              required
+            />
+           
+          </div>
+          <div class="mb-2">
+            <label for="description" class="form-label">Libellé</label> <br>
+            <input type="text" name="description" id="description" placeholder="A propos du produit..." >
+           
+          </div>
+          
+           <button type="submit" class="btn btn-primary">Créer le produit</button>
+          
+        </form>
+  
+          <table>
+            <thead>
+              <tr>
+                <th>Nom du produit</th>
+                <th>Quantité en stock</th>
+                <th >Libellé</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              
+              
+            </tbody>
+          </table>
+  
+      </div>
+    </div>
+     </section>
+    
+   
+  
+
 
     <script src="accueil.js"></script>
     <script
